@@ -1,0 +1,142 @@
+:root {
+  --malam: #120d26;
+  --ungu: #2a1f4f;
+  --teal: #7fe3d0;
+  --kuning: #ffd166;
+  --teks: #f3eeff;
+  --redup: #a99cc8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, var(--ungu), var(--malam) 70%);
+  color: var(--teks);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: env(safe-area-inset-top, 0px) 16px env(safe-area-inset-bottom, 0px);
+}
+
+.kartu {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+  color: var(--kuning);
+}
+
+.sub {
+  margin: 4px 0 24px;
+  color: var(--teal);
+  font-style: italic;
+}
+
+.judul {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+}
+
+.kecil {
+  font-size: 0.85rem;
+  color: var(--redup);
+}
+
+#status p {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.aksi {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+button {
+  flex: 1;
+  min-height: 48px;
+  padding: 14px 20px;
+  font: inherit;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+button.utama {
+  background: var(--teal);
+  color: var(--malam);
+  font-weight: 700;
+}
+
+button.sekunder {
+  background: transparent;
+  color: var(--teks);
+  border-color: var(--redup);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--kuning);
+  outline-offset: 2px;
+}
+
+#jurnal {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid rgba(127, 227, 208, 0.3);
+  border-radius: 18px;
+  background: rgba(42, 31, 79, 0.5);
+  animation: naik 0.8s ease both;
+}
+
+#jurnal[hidden] {
+  display: none;
+}
+
+.baris {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--redup);
+}
+
+@keyframes naik {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #jurnal {
+    animation: none;
+  }
+}
